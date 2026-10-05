@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+# 檢查 repo 完整性：檔案存在性、數量、大小合理範圍
+# 用法：./scripts/verify-integrity.sh
+
+set -uo pipefail
+cd "$(dirname "$0")/.." || exit 1
+
+FAIL=0
+pass() { printf '  \033[32m✓\033[0m %s\n' "$1"; }
+fail() { printf '  \033[31m✗\033[0m %s\n' "$1"; FAIL=1; }
+
+echo "── 1. 必要檔案存在性 ──"
+REQUIRED=(
+  "README.md"
+  "docs/00-綜合分析報告.md"
+  "docs/01-減害政策工具箱.md"
+  "docs/02-時間軸.md"
+  "sources/SOURCE-REGISTRY.md"
+  "sources/primary/D1-D2-一手文獻存檔.md"
+  "data/EVIDENCE-MATRIX.md"
+  "data/timeline.csv"
+)
+for f in "${REQUIRED[@]}"; do
+  [ -s "$f" ] && pass "$f" || fail "$f 缺失或為空"
+done
+
+echo "── 2. 原始調查報告 R1–R7 ──"
+RCOUNT=$(ls sources/raw-reports/R[1-7]-*.md 2>/dev/null | wc -l | tr -d ' ')
+if [ "$RCOUNT" -eq 7 ]; then
+  pass "7 份原始報告齊備"
+else
+  fail "原始報告僅 $RCOUNT 份（應為 7）"
+fi
+
+echo "── 3. 關鍵數據存在性（防止被誤刪）──"
+check_pattern() {
+  local file="$1" pattern="$2" desc="$3"
+  if grep -q "$pattern" "$file" 2>/dev/null; then
+    pass "$desc"
+  else
+    fail "$desc（$file 內未找到 '$pattern'）"
+  fi
+}
+RPT="docs/00-綜合分析報告.md"
+check_pattern "$RPT" "8 億 0,193" "公報正確金額（8 億 0,193 萬）"
+check_pattern "$RPT" "第 33 條" "正確尿液採驗法源（第 33 條）"
+check_pattern "$RPT" "憲判字第 16 號" "正確違憲判決（憲判字第 16 號）"
+check_pattern "$RPT" "1155013102" "依托咪酯升第一級發文字號（院臺法字第1155013102號）"
+check_pattern "$RPT" "不檢測依托咪酯" "採尿不檢依托咪酯之關鍵發現"
+check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
+check_pattern "sources/SOURCE-REGISTRY.md" "S-E19" "X 級錯誤說法登記完整（S-E01–S-E19）"
+check_pattern "data/EVIDENCE-MATRIX.md" "Q6" "待釐清爭議點 Q1–Q6"
+
+echo "── 4. 交叉一致性：金額不得出現錯誤版本 ──"
+if grep -rq "8 億 193 萬" docs/ data/ sources/SOURCE-REGISTRY.md sources/primary/ 2>/dev/null; then
+  # 允許出現在 X 級錯誤清單中，但不得出現在主報告
+  if grep -q "8 億 193 萬" "$RPT" 2>/dev/null; then
+    fail "主報告出現錯誤金額「8 億 193 萬」（應為 8 億 0,193 萬）"
+  else
+    pass "錯誤金額僅存在於 X 級錯誤清單（已標明為錯誤）"
+  fi
+else
+  pass "未發現錯誤金額"
+fi
+
+echo "── 5. 報告規模 ──"
+BYTES=$(wc -c < "$RPT" | tr -d ' ')
+if [ "$BYTES" -gt 30000 ]; then
+  pass "主報告 ${BYTES} bytes（內容完整）"
+else
+  fail "主報告僅 ${BYTES} bytes（可能遭截斷）"
+fi
+
+echo "── 6. git 狀態 ──"
+if git rev-parse --git-dir >/dev/null 2>&1; then
+  UNCOMMITTED=$(git status --porcelain | wc -l | tr -d ' ')
+  if [ "$UNCOMMITTED" -eq 0 ]; then
+    pass "工作區乾淨（已全部 commit）"
+  else
+    printf '  \033[33m!\033[0m 有 %s 個未 commit 的變更\n' "$UNCOMMITTED"
+  fi
+else
+  fail "非 git repo"
+fi
+
+echo
+if [ "$FAIL" -eq 0 ]; then
+  printf '\033[32m✓ 完整性檢查通過\033[0m\n'
+else
+  printf '\033[31m✗ 完整性檢查失敗\033[0m\n'
+fi
+exit $FAIL

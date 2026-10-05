@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# 暫存
+*.tmp
+*.swp
+*~
+
+# 本地覆寫
+.env
+.env.local
+
+# 查詢輸出（腳本產生，非原始資料）
+scripts/output/
