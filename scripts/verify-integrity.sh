@@ -46,15 +46,31 @@ check_pattern "$RPT" "8 億 0,193" "公報正確金額（8 億 0,193 萬）"
 check_pattern "$RPT" "第 33 條" "正確尿液採驗法源（第 33 條）"
 check_pattern "$RPT" "憲判字第 16 號" "正確違憲判決（憲判字第 16 號）"
 check_pattern "$RPT" "1155013102" "依托咪酯升第一級發文字號（院臺法字第1155013102號）"
-check_pattern "$RPT" "不檢測依托咪酯" "採尿不檢依托咪酯之關鍵發現"
+check_pattern "$RPT" "預設／基本檢驗項目均不含依托咪酯" "採尿檢驗項目之精確表述（2026-10-06 已修正）"
+check_pattern "$RPT" "S-E20" "已登記分母錯誤（S-E20）"
+check_pattern "$RPT" "占第二級毒品查獲重量" "依托咪酯占比之分母已更正"
 check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
-check_pattern "sources/SOURCE-REGISTRY.md" "S-E19" "X 級錯誤說法登記完整（S-E01–S-E19）"
+check_pattern "sources/SOURCE-REGISTRY.md" "S-E21" "X 級錯誤說法登記完整（S-E01–S-E21）"
 check_pattern "data/EVIDENCE-MATRIX.md" "Q6" "待釐清爭議點 Q1–Q6"
 
-echo "── 4. 交叉一致性：金額不得出現錯誤版本 ──"
+echo "── 4. 交叉一致性：過度絕對表述不得殘留於內文 ──"
+# 僅檢查報告內文，排除末章 X 級錯誤判定表（該表會引用錯誤說法原句）
+BODY=$(sed -n '1,/^## 十一、法律上站不站得住腳/p' "$RPT")
+
+if echo "$BODY" | grep -q "現行採尿並不檢測依托咪酯"; then
+  fail "報告內文殘留過度絕對表述「現行採尿並不檢測依托咪酯」且未標明為錯誤"
+else
+  pass "報告內文無殘留過度絕對表述"
+fi
+
+if echo "$BODY" | grep -q "占查獲重量 28.35%"; then
+  fail "報告內文仍出現未標明分母之「占查獲重量 28.35%」"
+else
+  pass "依托咪酯占比已標明分母（占第二級毒品）"
+fi
+
 if grep -rq "8 億 193 萬" docs/ data/ sources/SOURCE-REGISTRY.md sources/primary/ 2>/dev/null; then
-  # 允許出現在 X 級錯誤清單中，但不得出現在主報告
-  if grep -q "8 億 193 萬" "$RPT" 2>/dev/null; then
+  if echo "$BODY" | grep -q "8 億 193 萬"; then
     fail "主報告出現錯誤金額「8 億 193 萬」（應為 8 億 0,193 萬）"
   else
     pass "錯誤金額僅存在於 X 級錯誤清單（已標明為錯誤）"
