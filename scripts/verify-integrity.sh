@@ -50,7 +50,7 @@ check_pattern "$RPT" "預設／基本檢驗項目均不含依托咪酯" "採尿�
 check_pattern "$RPT" "S-E20" "已登記分母錯誤（S-E20）"
 check_pattern "$RPT" "占第二級毒品查獲重量" "依托咪酯占比之分母已更正"
 check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
-check_pattern "sources/SOURCE-REGISTRY.md" "S-E21" "X 級錯誤說法登記完整（S-E01–S-E21）"
+check_pattern "sources/SOURCE-REGISTRY.md" "S-E29" "X 級錯誤說法登記完整（S-E01–S-E29）"
 check_pattern "data/EVIDENCE-MATRIX.md" "Q6" "待釐清爭議點 Q1–Q6"
 
 echo "── 4. 交叉一致性：過度絕對表述不得殘留於內文 ──"
