@@ -51,11 +51,24 @@ check_pattern "$RPT" "S-E20" "已登記分母錯誤（S-E20）"
 check_pattern "$RPT" "占第二級毒品查獲重量" "依托咪酯占比之分母已更正"
 check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
 check_pattern "sources/SOURCE-REGISTRY.md" "S-E29" "X 級錯誤說法登記完整（S-E01–S-E29）"
-check_pattern "data/EVIDENCE-MATRIX.md" "Q6" "待釐清爭議點 Q1–Q6"
+check_pattern "data/EVIDENCE-MATRIX.md" "Q7" "待釐清爭議點 Q1–Q7"
+check_pattern "docs/02-時間軸.md" "Q7" "時間軸包含爭議點 Q7"
 
 echo "── 4. 交叉一致性：過度絕對表述不得殘留於內文 ──"
 # 僅檢查報告內文，排除末章 X 級錯誤判定表（該表會引用錯誤說法原句）
-BODY=$(sed -n '1,/^## 十一、法律上站不站得住腳/p' "$RPT")
+BODY=$(sed -n '1,/^## 十一、/p' "$RPT")
+
+if echo "$BODY" | grep -q "未刪未改"; then
+  fail "報告內文殘留全稱斷言「未刪未改」（應使用「查無刪改或更正紀錄」）"
+else
+  pass "報告內文無「未刪未改」全稱斷言"
+fi
+
+if echo "$BODY" | grep -qE "殷瑋（醫師|殷瑋.*醫師身分"; then
+  fail "報告內文誤植殷瑋身分（應為陳菁徽醫師）"
+else
+  pass "無殷瑋醫師身分誤植"
+fi
 
 if echo "$BODY" | grep -q "現行採尿並不檢測依托咪酯"; then
   fail "報告內文殘留過度絕對表述「現行採尿並不檢測依托咪酯」且未標明為錯誤"
