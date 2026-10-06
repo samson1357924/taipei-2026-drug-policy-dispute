@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupPyramidInteractivity(data.pyramidLayers);
   setupMythsFilter(data.myths);
   setupTimelineFilter(data.timelineEvents);
+  setupMissionModal();
 });
 
 /* ==========================================================================
@@ -419,4 +420,45 @@ function highlightText(text, keyword) {
   const escaped = escapeHTML(text);
   const regex = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, "gi");
   return escaped.replace(regex, `<mark class="search-highlight">$1</mark>`);
+}
+
+/* ==========================================================================
+   Mission & Disclaimer Modal Controller (A11y, Focus Management)
+   ========================================================================== */
+function setupMissionModal() {
+  const modal = document.getElementById("disclaimerModal");
+  const openBtn = document.getElementById("missionModalBtn");
+  const footerBtn = document.getElementById("footerMissionBtn");
+  const closeBtn = document.getElementById("closeModalBtn");
+  if (!modal || !closeBtn) return;
+
+  function openModal() {
+    modal.removeAttribute("hidden");
+    if (openBtn) openBtn.setAttribute("aria-expanded", "true");
+    closeBtn.focus();
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.setAttribute("hidden", "");
+    if (openBtn) {
+      openBtn.setAttribute("aria-expanded", "false");
+      openBtn.focus();
+    }
+    document.body.style.overflow = "";
+  }
+
+  if (openBtn) openBtn.addEventListener("click", openModal);
+  if (footerBtn) footerBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.hasAttribute("hidden")) {
+      closeModal();
+    }
+  });
 }

@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# 檢查 repo 完整性：檔案存在性、數量、大小合理範圍
+# 檢查 repo 完整性：檔案存在性、數量、大小合理範圍、開源規範與數據一致性
 # 用法：./scripts/verify-integrity.sh
 
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1
+
+export LC_ALL=C.UTF-8 2>/dev/null || export LC_ALL=C
 
 FAIL=0
 pass() { printf '  \033[32m✓\033[0m %s\n' "$1"; }
@@ -11,7 +13,15 @@ fail() { printf '  \033[31m✗\033[0m %s\n' "$1"; FAIL=1; }
 
 echo "── 1. 必要檔案存在性 ──"
 REQUIRED=(
+  "LICENSE"
+  "CONTRIBUTING.md"
   "README.md"
+  "index.html"
+  ".nojekyll"
+  "css/style.css"
+  "js/data.js"
+  "js/app.js"
+  "docs/DISCLAIMER-AND-MISSION.md"
   "docs/00-綜合分析報告.md"
   "docs/01-減害政策工具箱.md"
   "docs/02-時間軸.md"
@@ -25,7 +35,7 @@ for f in "${REQUIRED[@]}"; do
 done
 
 echo "── 2. 原始調查報告 R1–R7 ──"
-RCOUNT=$(ls sources/raw-reports/R[1-7]-*.md 2>/dev/null | wc -l | tr -d ' ')
+RCOUNT=$(find sources/raw-reports -name 'R[1-7]-*.md' 2>/dev/null | wc -l | tr -d ' ')
 if [ "$RCOUNT" -eq 7 ]; then
   pass "7 份原始報告齊備"
 else
@@ -48,15 +58,24 @@ check_pattern "$RPT" "憲判字第 16 號" "正確違憲判決（憲判字第 16
 check_pattern "$RPT" "1155013102" "依托咪酯升第一級發文字號（院臺法字第1155013102號）"
 check_pattern "$RPT" "預設／基本檢驗項目均不含依托咪酯" "採尿檢驗項目之精確表述（2026-10-06 已修正）"
 check_pattern "$RPT" "S-E20" "已登記分母錯誤（S-E20）"
+check_pattern "$RPT" "S-E21" "已正確標註採尿檢驗 X 級條目（S-E21）"
 check_pattern "$RPT" "占第二級毒品查獲重量" "依托咪酯占比之分母已更正"
 check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
 check_pattern "sources/SOURCE-REGISTRY.md" "S-E29" "X 級錯誤說法登記完整（S-E01–S-E29）"
 check_pattern "data/EVIDENCE-MATRIX.md" "Q7" "待釐清爭議點 Q1–Q7"
 check_pattern "docs/02-時間軸.md" "Q7" "時間軸包含爭議點 Q7"
+check_pattern "index.html" "disclaimerModal" "前端網頁已配置成立初衷與免責聲明組件"
 
-echo "── 4. 交叉一致性：過度絕對表述不得殘留於內文 ──"
+echo "── 4. CSV 與資料格式防呆 ──"
+if grep -q '^,' data/timeline.csv; then
+  fail "data/timeline.csv 存在缺失日期的行"
+else
+  pass "data/timeline.csv 日期格式完整無缺失"
+fi
+
+echo "── 5. 交叉一致性：過度絕對表述不得殘留於內文 ──"
 # 僅檢查報告內文，排除末章 X 級錯誤判定表（該表會引用錯誤說法原句）
-BODY=$(sed -n '1,/^## 十一、/p' "$RPT")
+BODY=$(sed -n '1,/^## 十一、/p' "$RPT" 2>/dev/null || true)
 
 if echo "$BODY" | grep -q "未刪未改"; then
   fail "報告內文殘留全稱斷言「未刪未改」（應使用「查無刪改或更正紀錄」）"
@@ -92,7 +111,7 @@ else
   pass "未發現錯誤金額"
 fi
 
-echo "── 5. 報告規模 ──"
+echo "── 6. 報告規模 ──"
 BYTES=$(wc -c < "$RPT" | tr -d ' ')
 if [ "$BYTES" -gt 30000 ]; then
   pass "主報告 ${BYTES} bytes（內容完整）"
@@ -100,7 +119,18 @@ else
   fail "主報告僅 ${BYTES} bytes（可能遭截斷）"
 fi
 
-echo "── 6. git 狀態 ──"
+echo "── 7. 聯動 Python 數據與統計驗算 ──"
+if command -v python3 >/dev/null 2>&1; then
+  if python3 scripts/verify-calculations.py >/dev/null 2>&1; then
+    pass "Python 數據與流行病學自動化驗算（29項）全數通過"
+  else
+    fail "Python 數據驗算未通過"
+  fi
+else
+  fail "未找到 python3"
+fi
+
+echo "── 8. git 狀態 ──"
 if git rev-parse --git-dir >/dev/null 2>&1; then
   UNCOMMITTED=$(git status --porcelain | wc -l | tr -d ' ')
   if [ "$UNCOMMITTED" -eq 0 ]; then

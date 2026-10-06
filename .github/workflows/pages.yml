@@ -1,34 +1,81 @@
-name: Deploy static content to Pages
+name: Deploy Static Content to GitHub Pages
 
 on:
   push:
-    branches: ["master", "main"]
+    branches:
+      - master
+      - main
   workflow_dispatch:
 
+# 最小權限原則
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# 避免重複部署衝突，保持部署佇列依序執行
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # ── 門禁檢驗 (Quality Gate) ──
+  validate:
+    name: Verify Integrity & Data Calculations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Run Repo Integrity & Cross-Validation
+        run: |
+          chmod +x scripts/verify-integrity.sh scripts/verify-calculations.py
+          ./scripts/verify-integrity.sh
+
+      - name: Run Epidemiological & Data Calculations Suite
+        run: |
+          python3 scripts/verify-calculations.py
+
+  # ── 建置與部署 (Build & Deploy) ──
   deploy:
+    name: Package & Deploy to GitHub Pages
+    needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Source Code
         uses: actions/checkout@v4
-      - name: Setup Pages
+
+      - name: Stage Static Site Artifacts
+        run: |
+          mkdir -p _site
+          # 核心前端資產
+          cp -R index.html css js _site/
+          # 查核報告、時序與證據矩陣
+          cp -R docs data sources _site/
+          # 公共資源與驗證截圖（若存在）
+          [ -d public ] && cp -R public _site/ || true
+          # 開源宣告與說明文件
+          cp -R README.md LICENSE CONTRIBUTING.md _site/
+          # 確保停用 Jekyll 處理（避免以底線或特定命名之靜態檔案被忽略）
+          touch _site/.nojekyll
+
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifact
+
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

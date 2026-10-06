@@ -1,0 +1,48 @@
+name: Continuous Integration & Verification
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+  push:
+    branches-ignore:
+      - master
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  quality-gate:
+    name: Integrity & Verification Gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Make Scripts Executable
+        run: chmod +x scripts/*.sh scripts/*.py 2>/dev/null || true
+
+      - name: Verify Repository Integrity
+        run: ./scripts/verify-integrity.sh
+
+      - name: Verify Calculations & Statistics
+        run: python3 scripts/verify-calculations.py
+
+      - name: Validate HTML & Core Asset Presence
+        run: |
+          test -s index.html
+          test -s css/style.css
+          test -s js/app.js
+          test -s js/data.js
+          test -s data/timeline.csv
+          test -s data/EVIDENCE-MATRIX.md
+          test -s LICENSE
+          test -s CONTRIBUTING.md
+          echo "All core assets and open-source files verified."

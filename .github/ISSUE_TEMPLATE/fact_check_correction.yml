@@ -1,0 +1,50 @@
+name: 🔍 事實查核勘誤回報 (Fact-Check Correction)
+description: 回報本平台數據誤植、法條引用錯誤、算式問題或文獻引述不精確
+title: "[勘誤] <簡短描述勘誤標的，例如：00-綜合分析報告 第四章 預算金額>"
+labels: ["fact-check", "correction", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感謝您協助維持事實查核平台的精確度！請根據一手公報或可驗證事實填寫以下欄位。
+  - type: input
+    id: target_file
+    attributes:
+      label: 涉及之檔案與章節位置
+      description: 例如 `docs/00-綜合分析報告.md` 第 11 章、`js/data.js` 條目 S-E20 等
+      placeholder: "例如：docs/00-綜合分析報告.md 行號 120"
+    validations:
+      required: true
+  - type: textarea
+    id: current_text
+    attributes:
+      label: 現行平台描述（有疑義之處）
+      description: 請引述平台目前有疑義的文字或數據
+      placeholder: "目前記載：..."
+    validations:
+      required: true
+  - type: textarea
+    id: correction_proposal
+    attributes:
+      label: 建議修正內容
+      description: 請說明更精確的事實陳述或數據
+      placeholder: "應修正為：..."
+    validations:
+      required: true
+  - type: textarea
+    id: primary_source
+    attributes:
+      label: 一手佐證來源（P1 / P2 級文獻）
+      description: 請提供立法院公報、裁判書字號、官方統計通報網址或學術論文 DOI / PMID
+      placeholder: "來源網址或文獻出處（請附具體頁碼或表格標號）"
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 貢獻查核確認
+      options:
+        - label: 我已確認本勘誤基於客觀一手資料，而非個人政黨傾向或價值觀論辯
+          required: true
+        - label: 我已閱讀並同意遵守專案的 CONTRIBUTING.md 與 CODE_OF_CONDUCT.md
+          required: true

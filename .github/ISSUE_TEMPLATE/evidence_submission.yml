@@ -1,0 +1,50 @@
+name: 📚 新事證 / 文獻補充提報 (Evidence Submission)
+description: 提供尚未收錄之官方公報、新民調、國際醫學期刊論文或當事人公開發言逐字
+title: "[事證補充] <簡短描述事證內容，例如：疾管署 2026 最新美沙冬服藥率統計>"
+labels: ["evidence", "new-source"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本平台歡迎各界提供具備檢驗價值的第一手材料，協助完善時間軸與證據矩陣。
+  - type: dropdown
+    id: evidence_level
+    attributes:
+      label: 證據等級自評
+      description: 請依據 CONTRIBUTING.md 之標準選擇
+      options:
+        - "P1 - 一手原始法定文獻（公報／判決／法條／官方統計）"
+        - "P2 - 同儕審查醫學與科學文獻／國際權威指引（Lancet, BMJ, WHO）"
+        - "P3 - 當事人公開發言錄音錄影／主流權威媒體報導"
+        - "X - 待查偽之具體網傳錯誤論述"
+    validations:
+      required: true
+  - type: input
+    id: source_title
+    attributes:
+      label: 文獻 / 資料名稱
+      placeholder: "例如：衛生福利部疾病管制署 115 年成癮防治工作統計"
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: 來源網址或永久典藏連結 (Wayback / Perma.cc)
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: source_summary
+    attributes:
+      label: 核心事實摘要與關聯爭議點
+      description: 本資料對應哪一個核心爭議（Q1–Q7）？支持或反駁何種主張？
+      placeholder: "摘要內容..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 查核規範確認
+      options:
+        - label: 我保證提供之材料為客觀公開資訊，無涉及個人隱私侵犯或非法取得之資料
+          required: true

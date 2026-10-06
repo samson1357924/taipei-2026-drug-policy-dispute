@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 政策與學術討論 (Discussions)
+    url: https://github.com/samson1357924/taipei-2026-drug-policy-dispute/discussions
+    about: 歡迎在 Discussions 進行一般性的公共政策與學術觀點交流。
+  - name: 🛡️ 隱私與敏感問題通報 (Security Advisory)
+    url: https://github.com/samson1357924/taipei-2026-drug-policy-dispute/security/advisories/new
+    about: 若涉及個人隱私個資或安全漏洞，請透過私密管道回報。

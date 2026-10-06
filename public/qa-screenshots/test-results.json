@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-10-06T11:44:12.509Z",
+  "testsPassed": 11,
+  "testsFailed": 0,
+  "consoleErrors": [],
+  "details": {
+    "pageLoad": {
+      "status": "PASS",
+      "title": "台北市 2026 毒品政策與減害爭議·多維視角公民事實查核平台"
+    },
+    "metricCards": [
+      {
+        "num": "29項",
+        "label": "謬誤與假訊息闢謠"
+      },
+      {
+        "num": "116條",
+        "label": "事實主張對照矩陣"
+      },
+      {
+        "num": "5層",
+        "label": "減害科學工具箱階梯"
+      },
+      {
+        "num": "6維",
+        "label": "去極化多元光譜觀點"
+      }
+    ],
+    "modal": {
+      "visible": true,
+      "hotline": true,
+      "nonPartisan": true,
+      "aiTools": true,
+      "noMedicalLegal": true,
+      "citationResponsibility": true,
+      "publicReview": true,
+      "absencePrinciple": true
+    },
+    "pyramid": {
+      "status": "PASS",
+      "layer1HasLaw": true
+    },
+    "perspectives": {
+      "status": "PASS",
+      "count": 6
+    },
+    "myths": {
+      "status": "PASS",
+      "total": 29,
+      "etomidateCount": 2
+    },
+    "timeline": {
+      "status": "PASS",
+      "totalEvents": 19
+    },
+    "openQuestions": {
+      "status": "PASS",
+      "count": 7
+    },
+    "themeToggle": {
+      "status": "PASS",
+      "from": "light",
+      "to": "dark"
+    },
+    "a11yAndErrors": {
+      "status": "PASS",
+      "errors": 0
+    }
+  }
+}

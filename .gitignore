@@ -12,3 +12,8 @@
 
 # 查詢輸出（腳本產生，非原始資料）
 scripts/output/
+
+# 構建與部署產物
+_site/
+.cache/
+node_modules/

@@ -23,6 +23,9 @@
         <h1 class="brand-title">台北 2026 毒品政策爭議事實查核</h1>
       </div>
       <div class="header-actions">
+        <button id="missionModalBtn" class="mission-btn" aria-haspopup="dialog" aria-expanded="false">
+          <span>💡</span><span>成立初衷與聲明</span>
+        </button>
         <button id="themeToggle" class="theme-toggle-btn" aria-label="切換深淺模式">
           <span>🌙</span><span>深色模式</span>
         </button>
@@ -52,7 +55,7 @@
           <div class="metric-label">謬誤與假訊息闢謠</div>
         </div>
         <div class="metric-card">
-          <div class="metric-num">106<span>條</span></div>
+          <div class="metric-num">116<span>條</span></div>
           <div class="metric-label">事實主張對照矩陣</div>
         </div>
         <div class="metric-card">
@@ -221,10 +224,13 @@
           📚 完整主張–證據對照表（EVIDENCE-MATRIX）與統一來源表
         </h4>
         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
-          本知識庫共登錄 106 條事實性主張與 45 個分級來源網址。
+          本知識庫共登錄 116 條事實性主張與 57 個分級來源標記（46 個直接來源網址）。
           歡迎研究員、事實查核記者與廣大公民直接查閱、下載 Markdown 原始檔案，或提交 Pull Request 共同核實。
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="docs/DISCLAIMER-AND-MISSION.md" class="repo-link-btn" target="_blank">
+            <span>💡</span> 閱讀成立初衷與免責聲明全文
+          </a>
           <a href="data/EVIDENCE-MATRIX.md" class="repo-link-btn" target="_blank">
             <span>📄</span> 查閱完整證據對照表 (EVIDENCE-MATRIX.md)
           </a>
@@ -232,7 +238,7 @@
             <span>📑</span> 查閱統一來源註冊表 (SOURCE-REGISTRY.md)
           </a>
           <a href="docs/00-綜合分析報告.md" class="repo-link-btn" target="_blank">
-            <span>📖</span> 閱讀 14 章綜合分析報告全文
+            <span>📖</span> 閱讀 13 章綜合分析報告全文（約 60 KB）
           </a>
         </div>
       </div>
@@ -244,15 +250,17 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-links">
+        <button id="footerMissionBtn" style="background:none; border:none; color:inherit; font:inherit; cursor:pointer; text-decoration:underline;">💡 成立初衷與免責聲明</button>
         <a href="#facts">核心事實</a>
         <a href="#pyramid">五層金字塔</a>
         <a href="#perspectives">多元光譜</a>
         <a href="#myths">闢謠庫</a>
         <a href="#timeline">時間軸</a>
         <a href="#matrix">開源矩陣</a>
+        <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank">聲明專檔</a>
       </div>
       <p class="footer-note">
-        本專案由開源社群基於客觀查核精神建立，不隸屬於任何政黨、候選人競選辦公室或商業媒體。<br>
+        本專案由公民研究團隊基於客觀查核精神建立，不隸屬於任何政黨、候選人競選辦公室或商業媒體。<br>
         網站內容遵循 CC BY-SA 4.0 國際授權條款，引用時請標明原始文獻與來源編號。
       </p>
       <div style="font-size: 0.8rem; color: var(--text-dim); font-family: var(--font-mono);">
@@ -260,6 +268,41 @@
       </div>
     </div>
   </footer>
+
+  <!-- 成立初衷與免責聲明 Modal 對話框 -->
+  <div id="disclaimerModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modalTitle">💡 成立初衷與核心免責聲明</h3>
+        <button id="closeModalBtn" class="modal-close-btn" aria-label="關閉視窗">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="hotline-banner">
+          <div class="hotline-title">🆘 衛生福利部 24 小時免付費戒毒成功專線</div>
+          <div class="hotline-number">0800-770-885</div>
+        </div>
+
+        <h4>一、 成立初衷：公共討論空間的極端壓縮</h4>
+        <p>在 2026 台北市長選戰毒品議題爭議期間，我們在社群平台上目睹了大量「片面資訊、斷章取義、只挑對自家有利言論」的現象。極化動員嚴重壓縮了理性公共討論的空間，更掩蓋了當前真正致命的青年依托咪酯（喪屍煙彈）危機。</p>
+        <p>為此，公民發起人嘗試運用開源與 AI 工具（OpenClaw 爬蟲檢索、OpenCode 研發協作、Codex 程式分析等），廣泛蒐集一手公報、法規原文與醫學文獻，跳脫演算法濾泡。我們決定將所有資料、檢驗腳本與矩陣全數公開，呼籲各界放下情緒敵意，恢復理性政策討論。</p>
+
+        <h4>二、 核心免責聲明</h4>
+        <ol>
+          <li><strong>非黨派與中立宣告</strong>：本平台純屬獨立公民技術實踐，不隸屬於任何政黨、競選團隊、公關公司或政府機構，亦無接受政治資助。本專案不判定政治人物是非，只釐清事實文本。</li>
+          <li><strong>AI 輔助性質與技術侷限</strong>：研究過程採用 AI 輔助檢索與多 Subagents 交叉驗證（並主動發現並修正了自身初期計算偏差，如 S-E20）。AI 與自然語言模型仍具機率本質與侷限，引用時應以文中所附之一手原始公報（P1 級）為準。</li>
+          <li><strong>非法律與醫療專業建議</strong>：法規分析純供公共政策研討參考，不構成法律訴訟意見；減害與藥理探討純屬公衛事實查核，絕不構成臨床醫療診斷或戒治處方。戒毒諮詢請洽專線 0800-770-885。</li>
+          <li><strong>引用責任與第三方免責</strong>：轉載引用應維持完整脈絡，第三方因不當解讀或政治動員衍生之法律責任概由該第三方自行承擔。</li>
+          <li><strong>全民監督與持續勘誤機制</strong>：恪守「查無資料 ≠ 不存在」原則，歡迎任何人攜帶一手文獻佐證透過 GitHub 提交勘誤。</li>
+        </ol>
+
+        <div class="modal-footer-links">
+          <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank" class="repo-link-btn">
+            <span>📄</span> 查閱完整聲明文件 (DISCLAIMER-AND-MISSION.md)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
