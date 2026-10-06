@@ -271,9 +271,29 @@ def main():
     )
 
     # -------------------------------------------------------------
-    # 8. Repo 文本內數據一致性抽查 (Regex Match)
+    # 8. 金氏世界紀錄基準與網傳「14小時 38萬」截圖數值驗算
     # -------------------------------------------------------------
-    print(f"\n{BOLD}8. 原始文本與資料庫數值一致性檢索{RESET}")
+    print(f"\n{BOLD}8. 金氏世界紀錄基準與「14小時 38萬」截圖時空驗算{RESET}")
+    guinness_24h_benchmark = 377004
+    screenshot_hours = 14
+    screenshot_comments = 378000 # 37.8 萬 (四捨五入為 38 萬)
+    exceeded_by = screenshot_comments - guinness_24h_benchmark
+
+    check(
+        "網傳截圖 14 小時 38 萬留言名義上超越金氏 24 小時基準",
+        screenshot_comments > guinness_24h_benchmark,
+        f"37.8 萬 ({screenshot_comments:,}) > 金氏基準 ({guinness_24h_benchmark:,})，超出 {exceeded_by:,} 則"
+    )
+    check(
+        "發文時間差驗算 (10/03 21:07 至 10/04 11:07)",
+        screenshot_hours == 14,
+        "發文時間 10/03 晚間 21:00 至 10/04 11:07 正好約 14 小時"
+    )
+
+    # -------------------------------------------------------------
+    # 9. Repo 文本內數據一致性抽查 (Regex Match)
+    # -------------------------------------------------------------
+    print(f"\n{BOLD}9. 原始文本與資料庫數值一致性檢索{RESET}")
     repo_root = Path(__file__).resolve().parent.parent
 
     # 檢查 js/data.js 中的數值
