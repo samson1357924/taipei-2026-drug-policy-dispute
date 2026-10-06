@@ -61,7 +61,7 @@ async function runQaSuite() {
   });
   console.log('Metrics Cards:', metricCards);
   results.details.metricCards = metricCards;
-  if (metricCards.length === 4 && metricCards.some(m => m.num.includes('29')) && metricCards.some(m => m.num.includes('116'))) {
+  if (metricCards.length === 4 && metricCards.some(m => m.num.includes('29')) && metricCards.some(m => m.num.includes('126'))) {
     results.testsPassed++;
   } else {
     results.testsFailed++;
@@ -203,9 +203,9 @@ async function runQaSuite() {
   const questionsCount = await page.$$eval('.question-card', cards => cards.length);
   await page.screenshot({ path: path.join(screenshotDir, 'tab-matrix.png') });
   console.log('Open Questions Count:', questionsCount);
-  if (questionsCount === 7) {
+  if (questionsCount === 14) {
     results.testsPassed++;
-    results.details.openQuestions = { status: 'PASS', count: 7 };
+    results.details.openQuestions = { status: 'PASS', count: 14 };
   } else {
     results.testsFailed++;
     results.details.openQuestions = { status: 'FAIL', count: questionsCount };
