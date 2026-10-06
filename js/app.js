@@ -130,9 +130,9 @@ function renderCoreFacts(facts) {
           <div class="fact-point">
             <div class="fact-point-header">
               <span class="fact-point-label">${escapeHTML(pt.label)}</span>
-              <span class="fact-point-status ${pt.status}">${escapeHTML(pt.statusText)}</span>
+              <span class="fact-point-status ${pt.status}">${linkifySourceCodes(escapeHTML(pt.statusText))}</span>
             </div>
-            <div class="fact-point-text">${escapeHTML(pt.text)}</div>
+            <div class="fact-point-text">${linkifySourceCodes(escapeHTML(pt.text))}</div>
           </div>
         `).join("")}
       </div>
@@ -281,7 +281,7 @@ function renderMyths(myths, keyword = "") {
       <div class="myth-claim">${highlightText(m.claim, keyword)}</div>
       <div class="myth-truth">✅ 事實查核：${highlightText(m.truth, keyword)}</div>
       <div class="myth-detail">${highlightText(m.detail, keyword)}</div>
-      <div class="myth-proof">佐證來源：${escapeHTML(m.proof)}</div>
+      <div class="myth-proof">佐證來源：${linkifySourceCodes(escapeHTML(m.proof))}</div>
     </article>
   `).join("");
 }
@@ -357,7 +357,7 @@ function renderTimeline(events) {
           <span class="fact-point-status verified">${escapeHTML(ev.badge)}</span>
         </div>
         <h4 class="timeline-title">${escapeHTML(ev.title)}</h4>
-        <p class="timeline-content">${escapeHTML(ev.content)}</p>
+        <p class="timeline-content">${linkifySourceCodes(escapeHTML(ev.content))}</p>
       </article>
     </div>
   `).join("");
@@ -413,6 +413,25 @@ function escapeHTML(str) {
       '"': '&quot;'
     }[tag] || tag)
   );
+}
+
+function getSourceUrl(code) {
+  const map = (window.FactCheckData && window.FactCheckData.sourceLinks) || {};
+  if (map[code]) return map[code];
+  // Fallback：導向統一來源註冊表（站內相對路徑，Pages 與本地皆可用）
+  return `sources/SOURCE-REGISTRY.md`;
+}
+
+function linkifySourceCodes(escapedText) {
+  if (!escapedText) return "";
+  // 將 S-P01、S-M19、S-N14、S-C01、S-D01、S-E20、S-PTS1 等編號轉為可點擊超連結
+  // 注意：輸入已 escape，無需擔心 HTML 注入；code 本身為安全字元
+  return escapedText.replace(/(S-(?:P|M|N|C|D|E|PTS)\d{1,2})/g, (code) => {
+    const url = getSourceUrl(code);
+    const isExternal = /^https?:\/\//.test(url);
+    const extra = isExternal ? ` target="_blank" rel="noopener noreferrer"` : ``;
+    return `<a href="${url}" class="source-link"${extra}>${code}</a>`;
+  });
 }
 
 function highlightText(text, keyword) {

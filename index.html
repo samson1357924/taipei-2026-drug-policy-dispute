@@ -55,7 +55,7 @@
           <div class="metric-label">謬誤與假訊息闢謠</div>
         </div>
         <div class="metric-card">
-          <div class="metric-num">116<span>條</span></div>
+          <div class="metric-num">126<span>條</span></div>
           <div class="metric-label">事實主張對照矩陣</div>
         </div>
         <div class="metric-card">
@@ -95,6 +95,12 @@
         </button>
         <button class="tab-btn" role="tab" id="tab-timeline" aria-selected="false" aria-controls="timeline" data-tab="timeline">
           <span>⏱️</span> 事件全時序時間軸
+        </button>
+        <button class="tab-btn" role="tab" id="tab-debate" aria-selected="false" aria-controls="debate" data-tab="debate">
+          <span>📺</span> TVBS辯論進展
+        </button>
+        <button class="tab-btn" role="tab" id="tab-sources" aria-selected="false" aria-controls="sources" data-tab="sources">
+          <span>📚</span> 來源出處與圖表
         </button>
         <button class="tab-btn" role="tab" id="tab-matrix" aria-selected="false" aria-controls="matrix" data-tab="matrix">
           <span>🔍</span> 待決爭議與證據矩陣
@@ -202,18 +208,126 @@
       </div>
     </section>
 
-    <!-- Tab 6: Evidence Matrix & Open Questions -->
+    <!-- Tab 6: TVBS Debate Progress -->
+    <section id="debate" class="tab-pane" role="tabpanel" aria-labelledby="tab-debate">
+      <div class="section-head">
+        <span class="section-badge">TVBS Debate Tracker</span>
+        <h3 class="section-title">📺 TVBS 電視辯論進展（10/05～10/06 原則同意，未定案）</h3>
+        <p class="section-desc">
+          雙方已就 TVBS 辯論達成原則同意（簽署意向書），但 TVBS 官方口徑為「協商中、尚未定論」。時間、地點、主持人、形式、場次全部未定。完整調查見
+          <a href="docs/04-TVBS電視辯論進展.md" target="_blank" rel="noopener noreferrer">docs/04-TVBS電視辯論進展.md</a>（Q8）。
+        </p>
+      </div>
+
+      <div class="debate-banner" role="status">
+        <div><strong>✅ 已證實：</strong>蔣辦陳柏翰 10/05 定調 TVBS、沈辦蔡一愷稱全簽多家、雙方 10/06 皆稱願辯（含毒品議題）。</div>
+        <div><strong>⚠️ 未定案：</strong>TVBS 官方稱尚未定論；時間、地點、主持、形式、是否獨家、多家合辦、其餘候選人安排<strong>查無資料</strong>。</div>
+      </div>
+
+      <div class="sources-grid">
+        <article class="source-card">
+          <h4>🟣 蔣陣營正式表態（S-M19，P2）</h4>
+          <p>發言人陳柏翰 10/05 經中央社：「謝謝沈伯洋同意在 TVBS 辯論，期待 TVBS 盡快協調及安排。」</p>
+          <a href="https://www.chinatimes.com/realtimenews/20261005003883-260407" target="_blank" rel="noopener noreferrer">中時 10/05 報導 ↗</a>
+        </article>
+        <article class="source-card">
+          <h4>🟢 沈陣營正式表態（S-M20，P2）</h4>
+          <p>發言人蔡一愷 10/06 經中央社：「已簽三立、民視、鏡電視與 TVBS，不指定任何一家，由各主辦公平協調。」沈本人：「無附帶條件，不限場地時間都 OK。」</p>
+          <a href="https://www.cna.com.tw/news/aipl/202610060103.aspx" target="_blank" rel="noopener noreferrer">中央社 10/06 源稿 ↗</a>
+        </article>
+        <article class="source-card">
+          <h4>📺 TVBS 主辦方口徑（S-M21，P3 轉引）</h4>
+          <p>「辯論會執行程序仍在與雙方陣營協商中，尚未有定論，待確認相關細節後再向社會大眾宣布。」故僅為原則同意，非簽字定案。</p>
+          <a href="https://www.taiwannews.com.tw/zh/news/6452552" target="_blank" rel="noopener noreferrer">Taiwan News 轉引 ↗</a>
+        </article>
+        <article class="source-card">
+          <h4>⚖️ 最中立交叉（S-D01，P2）</h4>
+          <p>公視 PNN 10/06 並陳：沈倡議第一場談毒品、蔣稱任何市政議題可談（含毒品），一定參加；交叉詰問是否設置仍待協商。</p>
+          <a href="https://news.pts.org.tw/article/830098" target="_blank" rel="noopener noreferrer">公視 10/06 聯訪 ↗</a>
+        </article>
+        <article class="source-card">
+          <h4>📰 邀約時序（S-N18，P4→P3）</h4>
+          <p>民視稱 8/29 首邀、三立 9/9、鏡 9/16、TVBS 9/20；順序獲沈本人重複，但精確日期待第二源驗證。</p>
+          <a href="https://www.ftvnews.com.tw/news/detail/2026A06P07M1" target="_blank" rel="noopener noreferrer">民視 10/06 報導 ↗</a> ·
+          <a href="https://www.ettoday.net/news/20261006/3249706.htm" target="_blank" rel="noopener noreferrer">ETtoday 10/06 ↗</a>
+        </article>
+        <article class="source-card">
+          <h4>📊 選戰背景（S-D05）</h4>
+          <p>10/05～10/06 查無新民調；最近為 9/22 信民（蔣 41.7% vs 沈 40.5%）。衛福部 10/05 三策略見央廣。</p>
+          <a href="https://news.ltn.com.tw/news/politics/breakingnews/5581917" target="_blank" rel="noopener noreferrer">信民民調 ↗</a> ·
+          <a href="https://www.rti.org.tw/news?uid=3&pid=235837" target="_blank" rel="noopener noreferrer">央廣衛福部 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tab 7: Sources & Charts -->
+    <section id="sources" class="tab-pane" role="tabpanel" aria-labelledby="tab-sources">
+      <div class="section-head">
+        <span class="section-badge">Sources & Visuals</span>
+        <h3 class="section-title">📚 來源出處總覽（超連結＋圖片）</h3>
+        <p class="section-desc">
+          全站主張均可回溯至統一編號（S-P／S-M／S-N／S-C／S-D／S-E）。P1 為一手公報原文，P2 須標明立場，P3 須交叉，P4 不可單獨支撐。
+          完整註冊表見 <a href="sources/SOURCE-REGISTRY.md" target="_blank" rel="noopener noreferrer">SOURCE-REGISTRY.md</a>，圖表總表見
+          <a href="docs/03-來源出處與圖表.md" target="_blank" rel="noopener noreferrer">docs/03-來源出處與圖表.md</a>。
+        </p>
+      </div>
+
+      <div class="chart-grid">
+        <figure class="chart-card">
+          <figcaption><strong>圖 1：減害五層金字塔</strong>（台灣僅執行第 1、2 層，完全不發毒品）</figcaption>
+          <img src="public/images/harm-reduction-pyramid.svg" alt="國際減害政策五層金字塔架構模型圖" loading="lazy" />
+          <div><a href="public/images/harm-reduction-pyramid.svg" target="_blank" rel="noopener noreferrer">開啟原圖 ↗</a> · 出處：S-P03、S-P12、R3</div>
+        </figure>
+        <figure class="chart-card">
+          <figcaption><strong>圖 2：雙分母校驗</strong>（依托咪酯 28.35% vs 4.94%、愛滋雙口徑、預算查核）</figcaption>
+          <img src="public/images/data-dual-denominator.svg" alt="選戰核心數據雙分母校驗圖" loading="lazy" />
+          <div><a href="public/images/data-dual-denominator.svg" target="_blank" rel="noopener noreferrer">開啟原圖 ↗</a> · 出處：S-P10、S-P13、S-P02</div>
+        </figure>
+      </div>
+
+      <div class="sources-grid">
+        <article class="source-card">
+          <h4>📜 一手原始文獻（P1）</h4>
+          <ul>
+            <li><a href="https://www.thinkingtaiwan.net/content/3055" target="_blank" rel="noopener noreferrer">S-P01 想想論壇 2014 舊文 ↗</a></li>
+            <li><a href="https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/110/09/LCIDC01_1100901.pdf" target="_blank" rel="noopener noreferrer">S-P02 立法院公報 PDF ↗</a></li>
+            <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000008" target="_blank" rel="noopener noreferrer">S-P03 毒危條例全文 ↗</a> · <a href="https://cons.judicial.gov.tw/" target="_blank" rel="noopener noreferrer">司法院搜尋 ↗</a></li>
+            <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0030026" target="_blank" rel="noopener noreferrer">S-P07 特定人員採驗辦法 ↗</a> · <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0030029" target="_blank" rel="noopener noreferrer">S-P08 採驗辦法 ↗</a></li>
+            <li><a href="https://health.gov.taipei/News_Content.aspx?n=BB5A41BA1E6CA260" target="_blank" rel="noopener noreferrer">S-P12 北市衛生局新聞稿 ↗</a> · <a href="https://www.guinnessworldrecords.com/world-records/most-comments-on-a-facebook-item-in-24-hours" target="_blank" rel="noopener noreferrer">S-P15 金氏紀錄 ↗</a></li>
+          </ul>
+        </article>
+        <article class="source-card">
+          <h4>🏥 具名聲明（P2，須標明立場）</h4>
+          <ul>
+            <li><a href="https://health.setn.com/news/1917848" target="_blank" rel="noopener noreferrer">S-M01 醫師公會聯合聲明（三立）↗</a></li>
+            <li><a href="https://udn.com/news/story/7266/9794062" target="_blank" rel="noopener noreferrer">S-M02 防疫學會聲明（聯合）↗</a></li>
+            <li><a href="https://www.rti.org.tw/news?uid=3&pid=235706" target="_blank" rel="noopener noreferrer">S-M04 羅一鈞專訪（央廣）↗</a> · <a href="https://forum.ettoday.net/news/3249380" target="_blank" rel="noopener noreferrer">S-M06 黃金舜投書 ↗</a></li>
+            <li><a href="https://tfc-taiwan.org.tw/fact-check-reports/taiwan-threads-94m-users-data-error" target="_blank" rel="noopener noreferrer">S-M17 TFC 查核 ↗</a> · <a href="https://www.youtube.com/watch?v=-s9NloSbkwo" target="_blank" rel="noopener noreferrer">🎬 S-C08 TVBS 影片 ↗</a></li>
+          </ul>
+        </article>
+        <article class="source-card">
+          <h4>📰 具名媒體＋中立媒體（P3）</h4>
+          <ul>
+            <li><a href="https://www.cna.com.tw/news/aipl/202610060103.aspx" target="_blank" rel="noopener noreferrer">S-N14 中央社辯論源稿 ↗</a> · <a href="https://news.pts.org.tw/article/830098" target="_blank" rel="noopener noreferrer">S-D01 公視辯論 ↗</a></li>
+            <li><a href="https://news.ltn.com.tw/news/politics/breakingnews/5597336" target="_blank" rel="noopener noreferrer">S-N15 自由雙方已簽 ↗</a> · <a href="https://news.pts.org.tw/article/829933" target="_blank" rel="noopener noreferrer">S-PTS2 公視實拍 ↗</a></li>
+            <li><a href="https://www.thenewslens.com/article/270421" target="_blank" rel="noopener noreferrer">S-N19 TNL 彙整 ↗</a> · <a href="https://www.ptt.cc/bbs/HatePolitics/M.1791083666.A.607.html" target="_blank" rel="noopener noreferrer">S-C04 PTT 討論串 ↗</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tab 8: Evidence Matrix & Open Questions -->
     <section id="matrix" class="tab-pane" role="tabpanel" aria-labelledby="tab-matrix">
       <div class="section-head">
         <span class="section-badge">Transparency & Open Science</span>
-        <h3 class="section-title">待釐清爭議點（Q1–Q7）與開源證據矩陣</h3>
+        <h3 class="section-title">待釐清爭議點（Q1–Q8）與開源證據矩陣</h3>
         <p class="section-desc">
-          真實的研究承認未知。此處透明揭露原始調查間的 7 項真實衝突與時空空白，拒絕在缺乏證據時強行定案。
+          真實的研究承認未知。此處透明揭露原始調查間的 8 項真實衝突與時空空白（含新增 Q8：TVBS 辯論是否獨家定案），拒絕在缺乏證據時強行定案。
         </p>
       </div>
 
       <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main);">
-        ⚠️ 7 項待釐清爭議點（Open Questions Q1–Q7）
+        ⚠️ 8 項待釐清爭議點（Open Questions Q1–Q8）
       </h4>
       <div id="openQuestionsContainer" class="questions-container">
         <!-- Rendered by JS -->
@@ -224,21 +338,27 @@
           📚 完整主張–證據對照表（EVIDENCE-MATRIX）與統一來源表
         </h4>
         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">
-          本知識庫共登錄 116 條事實性主張與 57 個分級來源標記（46 個直接來源網址）。
+          本知識庫共登錄 126 條事實性主張（含新增 §11 TVBS 辯論 10 條）與 76 個分級來源標記（79 獨立來源網址，含 TVBS 辯論 18 條新增連結）。
           歡迎研究員、事實查核記者與廣大公民直接查閱、下載 Markdown 原始檔案，或提交 Pull Request 共同核實。
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="docs/DISCLAIMER-AND-MISSION.md" class="repo-link-btn" target="_blank">
+          <a href="docs/DISCLAIMER-AND-MISSION.md" class="repo-link-btn" target="_blank" rel="noopener noreferrer">
             <span>💡</span> 閱讀成立初衷與免責聲明全文
           </a>
-          <a href="data/EVIDENCE-MATRIX.md" class="repo-link-btn" target="_blank">
+          <a href="data/EVIDENCE-MATRIX.md" class="repo-link-btn" target="_blank" rel="noopener noreferrer">
             <span>📄</span> 查閱完整證據對照表 (EVIDENCE-MATRIX.md)
           </a>
-          <a href="sources/SOURCE-REGISTRY.md" class="repo-link-btn" target="_blank">
+          <a href="sources/SOURCE-REGISTRY.md" class="repo-link-btn" target="_blank" rel="noopener noreferrer">
             <span>📑</span> 查閱統一來源註冊表 (SOURCE-REGISTRY.md)
           </a>
-          <a href="docs/00-綜合分析報告.md" class="repo-link-btn" target="_blank">
+          <a href="docs/00-綜合分析報告.md" class="repo-link-btn" target="_blank" rel="noopener noreferrer">
             <span>📖</span> 閱讀 13 章綜合分析報告全文（約 60 KB）
+          </a>
+          <a href="docs/03-來源出處與圖表.md" class="repo-link-btn" target="_blank" rel="noopener noreferrer">
+            <span>📚</span> 來源出處總覽（超連結＋圖片）
+          </a>
+          <a href="docs/04-TVBS電視辯論進展.md" class="repo-link-btn" target="_blank" rel="noopener noreferrer">
+            <span>📺</span> TVBS 辯論進展調查（Q8）
           </a>
         </div>
       </div>
@@ -256,8 +376,10 @@
         <a href="#perspectives">多元光譜</a>
         <a href="#myths">闢謠庫</a>
         <a href="#timeline">時間軸</a>
+        <a href="#debate">TVBS辯論</a>
+        <a href="#sources">來源圖表</a>
         <a href="#matrix">開源矩陣</a>
-        <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank">聲明專檔</a>
+        <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank" rel="noopener noreferrer">聲明專檔</a>
       </div>
       <p class="footer-note">
         本專案由公民研究團隊基於客觀查核精神建立，不隸屬於任何政黨、候選人競選辦公室或商業媒體。<br>
@@ -296,7 +418,7 @@
         </ol>
 
         <div class="modal-footer-links">
-          <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank" class="repo-link-btn">
+          <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank" rel="noopener noreferrer" class="repo-link-btn">
             <span>📄</span> 查閱完整聲明文件 (DISCLAIMER-AND-MISSION.md)
           </a>
         </div>

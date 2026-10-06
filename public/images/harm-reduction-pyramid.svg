@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="100%" height="100%" style="background:#0f172a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a7fb8" />
+      <stop offset="100%" stop-color="#6b5b95" />
+    </linearGradient>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <text x="450" y="45" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="800" letter-spacing="1">國際減害政策五層金字塔架構模型</text>
+  <text x="450" y="72" text-anchor="middle" fill="#94a3b8" font-size="13">Harm Reduction Policy Hierarchy &amp; Taiwan Legal Status</text>
+
+  <!-- Layer 5 (Top: HAT) -->
+  <g filter="url(#shadow)">
+    <polygon points="450,100 370,165 530,165" fill="url(#grad5)" />
+    <text x="450" y="138" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">第五層：醫療海洛因 (HAT)</text>
+    <text x="450" y="155" text-anchor="middle" fill="#fee2e2" font-size="11">專責診所每日2-3次當面服藥</text>
+  </g>
+  <rect x="580" y="112" width="280" height="42" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="595" y="130" fill="#ef4444" font-size="12" font-weight="bold">❌ 台灣未引進｜無修法提案</text>
+  <text x="595" y="146" fill="#cbd5e1" font-size="11">「發毒品」字面上僅能對應此層</text>
+
+  <!-- Layer 4 (Drug Checking) -->
+  <g filter="url(#shadow)">
+    <polygon points="364,173 536,173 596,238 304,238" fill="url(#grad4)" />
+    <text x="450" y="202" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">第四層：物質檢驗服務 (Drug Checking)</text>
+    <text x="450" y="222" text-anchor="middle" fill="#ffedd5" font-size="12">檢測不明雜質與致死劑量・不交付物質</text>
+  </g>
+  <rect x="630" y="185" width="240" height="42" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1.5"/>
+  <text x="645" y="203" fill="#f97316" font-size="12" font-weight="bold">⚠️ 民間自發試辦｜無官方專法</text>
+  <text x="645" y="219" fill="#cbd5e1" font-size="11">涉及持有非法毒品之刑事法規邊界</text>
+
+  <!-- Layer 3 (Naloxone) -->
+  <g filter="url(#shadow)">
+    <polygon points="298,246 602,246 662,311 238,311" fill="url(#grad3)" />
+    <text x="450" y="275" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold">第三層：鴉片類解毒劑分發 (拿破酮 Naloxone)</text>
+    <text x="450" y="295" text-anchor="middle" fill="#fef9c3" font-size="12">解毒劑非毒品・不具成癮性・立即可逆過量窒息</text>
+  </g>
+  <rect x="680" y="258" width="200" height="42" rx="6" fill="#1e293b" stroke="#eab308" stroke-width="1.5"/>
+  <text x="695" y="276" fill="#eab308" font-size="12" font-weight="bold">⚠️ 醫院常備｜研議社區化</text>
+  <text x="695" y="292" fill="#cbd5e1" font-size="11">屬處方藥，衛福部研議非處方化</text>
+
+  <!-- Layer 2 (OAT: Methadone) -->
+  <g filter="url(#shadow)">
+    <polygon points="232,319 668,319 728,384 172,384" fill="url(#grad2)" />
+    <text x="450" y="348" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">第二層：口服替代治療 (OAT 美沙冬/丁基原啡因)</text>
+    <text x="450" y="368" text-anchor="middle" fill="#e6def5" font-size="12">管制藥品・醫院當面口服(DOT)・不可帶出・不發針頭</text>
+  </g>
+  <rect x="20" y="331" width="135" height="42" rx="6" fill="#1e293b" stroke="#8a7fb8" stroke-width="1.5"/>
+  <text x="30" y="349" fill="#a89cc8" font-size="12" font-weight="bold">✅ 台灣常態執行</text>
+  <text x="30" y="365" fill="#cbd5e1" font-size="11">全台逾180家指定院所</text>
+
+  <!-- Layer 1 (Base: NSEP) -->
+  <g filter="url(#shadow)">
+    <polygon points="166,392 734,392 794,457 106,457" fill="url(#grad1)" />
+    <text x="450" y="421" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">第一層：清潔針具計畫 (NSEP)</text>
+    <text x="450" y="441" text-anchor="middle" fill="#d1fae5" font-size="12">只發無菌針具與回收盒・絕不發放任何物質・阻斷愛滋C肝傳播</text>
+  </g>
+  <rect x="20" y="404" width="70" height="42" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="28" y="422" fill="#10b981" font-size="12" font-weight="bold">✅ 全國常規</text>
+  <text x="28" y="438" fill="#cbd5e1" font-size="11">愛滋條例§8</text>
+
+  <!-- Bottom Annotation -->
+  <rect x="100" y="475" width="700" height="32" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="450" y="496" text-anchor="middle" fill="#94a3b8" font-size="12">
+    💡 關鍵事實：台灣實際執行為第 1、2 層（完全不發毒品）；依托咪酯霧化吸入對第 1、2 層在藥理上完全無效。
+  </text>
+</svg>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="100%" style="background:#0f172a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <text x="480" y="40" text-anchor="middle" fill="#f8fafc" font-size="22" font-weight="800">選戰核心數據一手文獻查核與分母校驗圖</text>
+  <text x="480" y="65" text-anchor="middle" fill="#94a3b8" font-size="13">Primary Epidemiological &amp; Budget Data Verification (2026 Taipei Mayoral Race)</text>
+
+  <!-- Panel 1: Etomidate Denominator (S-E20 Debunk) -->
+  <g transform="translate(40, 95)">
+    <rect width="270" height="345" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="270" height="36" rx="12" fill="#6b5b95" fill-opacity="0.25"/>
+    <text x="135" y="24" text-anchor="middle" fill="#c9bee3" font-size="14" font-weight="bold">依托咪酯查獲比例雙分母</text>
+
+    <text x="20" y="65" fill="#e2e8f0" font-size="12">114 年警政署統計 (S-P10)</text>
+    <text x="20" y="85" fill="#94a3b8" font-size="11">查獲總重：652.46 公斤</text>
+
+    <!-- Bar 1: Correct 1 -->
+    <rect x="20" y="110" width="230" height="48" rx="6" fill="#0f172a" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="30" y="130" fill="#22c55e" font-size="12" font-weight="bold">占第二級毒品：28.35%</text>
+    <text x="30" y="147" fill="#94a3b8" font-size="10">分母：第二級毒品 2,301.43 公斤</text>
+
+    <!-- Bar 2: Correct 2 -->
+    <rect x="20" y="170" width="230" height="48" rx="6" fill="#0f172a" stroke="#a89cc8" stroke-width="1.2"/>
+    <text x="30" y="190" fill="#c9bee3" font-size="12" font-weight="bold">占全體毒品：4.94%</text>
+    <text x="30" y="207" fill="#94a3b8" font-size="10">分母：全體毒品 13,217.08 公斤</text>
+
+    <!-- Bar 3: Myth (S-E20) -->
+    <rect x="20" y="235" width="230" height="85" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="30" y="257" fill="#f87171" font-size="12" font-weight="bold">❌ 網傳謬誤 S-E20</text>
+    <text x="30" y="275" fill="#fca5a5" font-size="11">「依托咪酯占全台毒品 28.35%」</text>
+    <text x="30" y="295" fill="#fecaca" font-size="10">分母混淆導致誇大達 5.74 倍！</text>
+    <text x="30" y="310" fill="#fca5a5" font-size="10">（實為 4.94%，非近三成）</text>
+  </g>
+
+  <!-- Panel 2: 2005 HIV Dual-Cohort -->
+  <g transform="translate(345, 95)">
+    <rect width="270" height="345" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="270" height="36" rx="12" fill="#10b981" fill-opacity="0.15"/>
+    <text x="135" y="24" text-anchor="middle" fill="#34d399" font-size="14" font-weight="bold">2005 愛滋疫情雙口徑</text>
+
+    <text x="20" y="65" fill="#e2e8f0" font-size="12">減害計畫推動前夕歷年高峰</text>
+    <text x="20" y="85" fill="#94a3b8" font-size="11">分子／分母經 Python 嚴謹驗算</text>
+
+    <rect x="20" y="110" width="230" height="65" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+    <text x="30" y="132" fill="#34d399" font-size="13" font-weight="bold">疾管署通報口徑：67%</text>
+    <text x="30" y="150" fill="#cbd5e1" font-size="11">2,269 人 / 3,392 人 = 66.89%</text>
+    <text x="30" y="166" fill="#94a3b8" font-size="10">官方初報即時通報統計 (S-P13)</text>
+
+    <rect x="20" y="185" width="230" height="65" rx="6" fill="#0f172a" stroke="#a7f3d0" stroke-width="1.2"/>
+    <text x="30" y="207" fill="#6ee7b7" font-size="13" font-weight="bold">紅絲帶基金會口徑：72%</text>
+    <text x="30" y="225" fill="#cbd5e1" font-size="11">2,426 人 / 3,378 人 = 71.82%</text>
+    <text x="30" y="241" fill="#94a3b8" font-size="10">林頂引述之疫調複查口徑 (S-M08)</text>
+
+    <rect x="20" y="260" width="230" height="60" rx="6" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+    <text x="30" y="282" fill="#a7f3d0" font-size="12" font-weight="bold">📉 2020 年成效驗證</text>
+    <text x="30" y="302" fill="#ffffff" font-size="11">注射藥癮占比驟降至 約 1.6%</text>
+  </g>
+
+  <!-- Panel 3: Legislative Budget (S-P02 & S-E07) -->
+  <g transform="translate(650, 95)">
+    <rect width="270" height="345" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="270" height="36" rx="12" fill="#f59e0b" fill-opacity="0.15"/>
+    <text x="135" y="24" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="bold">蔣萬安 2021 立院提案查核</text>
+
+    <text x="20" y="65" fill="#e2e8f0" font-size="12">立法院公報第110卷第9期 (S-P02)</text>
+    <text x="20" y="85" fill="#94a3b8" font-size="11">身分：提案人（非被動連署）</text>
+
+    <rect x="20" y="110" width="230" height="65" rx="6" fill="#0f172a" stroke="#eab308" stroke-width="1.2"/>
+    <text x="30" y="132" fill="#fde047" font-size="13" font-weight="bold">公報正確總預算</text>
+    <text x="30" y="152" fill="#ffffff" font-size="13" font-weight="bold">8 億 0,193 萬 7 千元</text>
+    <text x="30" y="167" fill="#94a3b8" font-size="10">用途：諮詢專線、人才培訓（非美沙冬）</text>
+
+    <rect x="20" y="185" width="230" height="50" rx="6" fill="#0f172a" stroke="#64748b" stroke-width="1.2"/>
+    <text x="30" y="205" fill="#94a3b8" font-size="12">凍結金額：100 萬元</text>
+    <text x="30" y="222" fill="#c9bee3" font-size="11">實質凍結比例：0.12% (千分之1.2)</text>
+
+    <rect x="20" y="245" width="230" height="75" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1.2"/>
+    <text x="30" y="267" fill="#f87171" font-size="12" font-weight="bold">❌ 二手媒體筆誤 S-E07</text>
+    <text x="30" y="285" fill="#fca5a5" font-size="11">風傳媒誤植為「8億 193萬」</text>
+    <text x="30" y="303" fill="#fecaca" font-size="10">漏一零差額達 NT$ 17,363,000 元</text>
+  </g>
+</svg>

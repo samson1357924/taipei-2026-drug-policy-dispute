@@ -44,7 +44,7 @@
 
 1. **本 repo 不判定政治主張之是非**，只釐清「誰說了什麼、文本與事實支持到哪裡」。
 2. **所有事實性主張都應可回溯至 `sources/SOURCE-REGISTRY.md` 的來源編號**；無編號者視為未經查證。
-3. **已知 7 項待釐清爭議（Q1–Q7）**，見 `data/EVIDENCE-MATRIX.md` 末節。這些是原始調查之間的真實衝突，**尚未定案**，引用時務必注意。
+3. **已知 8 項待釐清爭議（Q1–Q8，Q8 為 TVBS 辯論未定案）**，見 `data/EVIDENCE-MATRIX.md` 末節。這些是原始調查之間的真實衝突，**尚未定案**，引用時務必注意。
 
 ---
 
@@ -61,6 +61,36 @@
 
 ---
 
+## 📺 最新進展：TVBS 電視辯論（10/05～10/06 原則同意，未定案）
+
+> 詳見 [docs/04-TVBS電視辯論進展.md](docs/04-TVBS電視辯論進展.md)（2 路 subagents 並行調查＋交叉驗證）
+
+- **已證實**：蔣辦發言人[陳柏翰 10/05 定調 TVBS](https://www.chinatimes.com/realtimenews/20261005003883-260407)（S-M19）；沈辦發言人[蔡一愷稱已簽三立、民視、鏡、TVBS](https://www.cna.com.tw/news/aipl/202610060103.aspx)（S-M20）；雙方 10/06 皆稱願辯（含毒品議題）— [中央社源稿](https://www.cna.com.tw/news/aipl/202610060103.aspx)（S-N14）、[公視 PNN](https://news.pts.org.tw/article/830098)（S-D01）
+- **未定案**：[TVBS 官方稱協商中尚未定論](https://www.taiwannews.com.tw/zh/news/6452552)（S-M21）；時間、地點、主持人、形式、場次、是否獨家、其餘候選人安排**查無資料**（**Q8**）
+- **邀約時序**：[民視稱 8/29 首邀](https://www.ftvnews.com.tw/news/detail/2026A06P07M1)（S-N18，日期待第二源驗證）；沈稱順序民視→三立→鏡→TVBS（[ETtoday](https://www.ettoday.net/news/20261006/3249706.htm) S-N16）
+
+---
+
+## 📚 來源出處（超連結＋圖片）
+
+> 完整可點擊總表見 [docs/03-來源出處與圖表.md](docs/03-來源出處與圖表.md)；註冊表見 [sources/SOURCE-REGISTRY.md](sources/SOURCE-REGISTRY.md)
+
+**一手文獻（P1）**：[S-P01 想想論壇舊文](https://www.thinkingtaiwan.net/content/3055) · [S-P02 立院公報 PDF](https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/110/09/LCIDC01_1100901.pdf) · [S-P03 毒危條例](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000008) · [S-P12 北市衛生局新聞稿](https://health.gov.taipei/News_Content.aspx?n=BB5A41BA1E6CA260) · [S-P15 金氏紀錄](https://www.guinnessworldrecords.com/world-records/most-comments-on-a-facebook-item-in-24-hours)
+
+**具名聲明（P2）**：[S-M01 醫師公會聲明](https://health.setn.com/news/1917848) · [S-M02 防疫學會聲明](https://udn.com/news/story/7266/9794062) · [S-M04 羅一鈞專訪](https://www.rti.org.tw/news?uid=3&pid=235706) · [🎬 S-C08 TVBS 新聞影片](https://www.youtube.com/watch?v=-s9NloSbkwo)
+
+**自製圖表**：
+
+![減害五層金字塔](public/images/harm-reduction-pyramid.svg)
+
+*圖 1：[減害五層金字塔原圖](public/images/harm-reduction-pyramid.svg)（台灣僅執行第 1、2 層，完全不發毒品）*
+
+![雙分母校驗](public/images/data-dual-denominator.svg)
+
+*圖 2：[雙分母校驗原圖](public/images/data-dual-denominator.svg)（S-P10、S-P13、S-P02 回溯＋29 項驗算）*
+
+---
+
 ## Repo 架構
 
 ```
@@ -74,8 +104,8 @@ taipei-2026-drug-policy-dispute/
 ├── index.html                       ← **公民事實查核互動式網站（GitHub Pages 首頁）**
 ├── css/style.css                    ← 響應式與深淺色無障礙樣式
 ├── js/
-│   ├── data.js                      ← 查核數據庫（116 條矩陣、29 項闢謠、五層工具箱）
-│   └── app.js                       ← 互動過濾、闢謠搜尋、時間軸檢索與 Modal 控制
+│   ├── data.js                      ← 查核數據庫（126 條矩陣、29 項闢謠、五層工具箱、Q1–Q8、來源超連結）
+│   └── app.js                       ← 互動過濾、闢謠搜尋、時間軸檢索、Modal 控制、來源編號超連結化
 ├── docs/
 │   ├── DISCLAIMER-AND-MISSION.md     ← **成立初衷與免責聲明全文**
 │   ├── PUBLIC-RELEASE-GUIDE.md      ← **開源公開發布、Pages 部署與維運指南**
@@ -83,7 +113,7 @@ taipei-2026-drug-policy-dispute/
 │   ├── 01-減害政策工具箱.md          ← 五層框架（核心分析工具）
 │   └── 02-時間軸.md                  ← 完整事件時序
 ├── sources/
-│   ├── SOURCE-REGISTRY.md           ← **統一來源編號表（57 個分級來源、46 個直接 URL、29 項闢謠）**
+│   ├── SOURCE-REGISTRY.md           ← **統一來源編號表（76 項分級來源、79 獨立 URL、29 項闢謠，含 TVBS 新增）**
 │   ├── primary/                     ← 一手原始文獻存檔
 │   └── raw-reports/                 ← 7 份原始 subagent 調查報告全文
 │       ├── R1-爭議原文與言論系譜.md
@@ -94,7 +124,7 @@ taipei-2026-drug-policy-dispute/
 │       ├── R6-選戰策略與攻防.md
 │       └── R7-輿情傳播與網路生態.md
 ├── data/
-│   ├── EVIDENCE-MATRIX.md           ← **主張–證據對照表（116 條逐條核對用）**
+│   ├── EVIDENCE-MATRIX.md           ← **主張–證據對照表（126 條逐條核對用，含 §11 TVBS 辯論＋Q8）**
 │   └── timeline.csv                 ← 機器可讀事件時序（標準 CSV）
 ├── review/                          ← review subagent 產出
 ├── scripts/

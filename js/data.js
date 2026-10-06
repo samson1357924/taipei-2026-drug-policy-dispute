@@ -163,7 +163,7 @@ window.FactCheckData = {
       layer: 1,
       name: "第 1 層：清潔針具與器材交換計畫（NSEP / NSP）",
       enName: "Needle and Syringe Exchange Programs",
-      color: "#2563eb",
+      color: "#7c6aae",
       statusBadge: "✅ 台灣全面實施中（2005 試辦、2006 全國推動）",
       taiwanReality: "法源為《人類免疫缺乏病毒傳染防治及感染者權益保障條例》第 8 條。由衛生局核准藥局、衛生所與自動機發放無菌針具與回收盒。只發耗材不發毒品。",
       intlEvidence: "與 OAT 併用可降低 C 肝感染 74–76%（Platt et al., Cochrane 2017）；成功使台灣注射藥癮新增愛滋感染比例從 2005 年 72%（或 67%）降至 2020 年約 1.6%。",
@@ -589,6 +589,13 @@ window.FactCheckData = {
       conflict: "R5 內部記 10-04 21:30；但該數字唯一正式新聞來源（S-N05 自由時報）實刊於 10-05 16:05。",
       impact: "10-04 21:30 屬未經證實之衍生時點；本 repo 僅能確認「10-05 16:05 前已達 7,357 人」。",
       status: "已修正時間軸，以 S-N05 報導時點為準"
+    },
+    {
+      id: "Q8",
+      title: "TVBS 辯論是否為獨家定案？時間、地點、主持、形式何時簽字？",
+      conflict: "雙方 10/05～10/06 均稱已簽 TVBS 意向書（S-M19、S-M20），但 TVBS 官方稱協商中尚未定論（S-M21）；四家邀約日期僅民視單源；主持／時間／地點查無資料。",
+      impact: "僅能確認原則同意，不可誤讀為已排定；詳見 docs/04-TVBS電視辯論進展.md。",
+      status: "2026-10-06 新增，待幕僚協商與 TVBS 公告追蹤"
     }
   ],
 
@@ -739,12 +746,71 @@ window.FactCheckData = {
       content: "30 餘專業團體具名聲明：『反毒與減害是雙重網』、『支持減害絕不等於鼓勵吸毒』、『醫療專業不屬於任何政黨』。"
     },
     {
+      date: "2026-10-05 19:24",
+      title: "衛福部晚間說明減害三策略：123家美沙冬機構",
+      actor: "衛福部／央廣RTI",
+      category: "官方政策補充",
+      badge: "🟡 P3 官方說明",
+      content: "清潔針具、替代維持治療、衛教篩檢轉介；123家美沙冬機構＋30給藥點；注射藥癮占新增愛滋2005年72%降至2025年1.7%。出處 S-D02（S-M05政策內容補充）。"
+    },
+    {
+      date: "2026-10-05 20:23",
+      title: "蔣辦定調TVBS辯論：謝謝沈伯洋同意，期待TVBS盡快協調",
+      actor: "蔣辦發言人陳柏翰／中央社",
+      category: "電視辯論進展",
+      badge: "🔵 P3 單一採訪轉引",
+      content: "陳柏翰稱TVBS先前已邀約、蔣原本就同意（S-M19＝S-N13同URL，非獨立交叉，待第二直擊）。沈辦蔡一愷同日稱已簽多家不指定一家。詳見 docs/04-TVBS電視辯論進展.md。"
+    },
+    {
+      date: "2026-10-06 09:01",
+      title: "沈伯洋：最早簽民視再簽三立、鏡、TVBS；倡議第一場談毒品",
+      actor: "沈伯洋／ETtoday、SETN",
+      category: "電視辯論進展",
+      badge: "🟡 P3 現場引文",
+      content: "順序民視→三立→鏡→TVBS獲多家交叉；精確日期8/29等僅民視單源待驗（S-N18 P4）。沈倡議第一場談毒品、無附帶條件。出處 S-N16、S-N17、S-D07。"
+    },
+    {
+      date: "2026-10-06 12:35",
+      title: "蔣萬安：正式辯論任何市政議題可談含毒品，一定參加",
+      actor: "蔣萬安／中央社、公視",
+      category: "電視辯論進展",
+      badge: "🟡 P2 雙方原話",
+      content: "蔣於文山社宅聯訪稱幕僚持續溝通細節；沈稱10分鐘後也可辯。時間、地點、主持、形式全部未定（Q8）。出處 S-N14、S-D01。"
+    },
+    {
+      date: "2026-10-06 16:07",
+      title: "蔣競辦稱雙方已簽TVBS同意書；TVBS官方稱尚未定論",
+      actor: "蔣競辦／TVBS／自由時報",
+      category: "電視辯論進展",
+      badge: "🔵 P3 轉引待定",
+      content: "蔣競辦下午稱後續由電視台與幕僚協調（S-N15）；TVBS官方稱執行程序協商中尚未定論（S-M21 P3轉引＋S-D08）。原則同意≠簽字定案（Q8）。"
+    },
+    {
       date: "2026-10-06",
       title: "多維視角事實查核平台與知識庫正式公開",
       actor: "Civic Open Source Project",
       category: "公民查核成果",
       badge: "🟢 一手交叉驗證",
-      content: "完成 7 路並行調查與三輪事實抽驗，釐清 29 項虛假謬誤與 7 項待定案爭議，以去極化、拒絕片面過濾的開源平台提供市民客觀判讀。"
+      content: "完成 7 路並行調查與三輪事實抽驗，釐清 29 項虛假謬誤與 8 項待定案爭議，以去極化、拒絕片面過濾的開源平台提供市民客觀判讀。"
     }
-  ]
+  ],
+
+  // 來源超連結對照（高頻 15 條直連，其餘走 sources/SOURCE-REGISTRY.md；S-M19/S-N13 等同 URL 雙編號已註明）
+  sourceLinks: {
+    "S-P01": "https://www.thinkingtaiwan.net/content/3055",
+    "S-P02": "https://ppg.ly.gov.tw/ppg/PublicationBulletinDetail/download/communique1/final/pdf/110/09/LCIDC01_1100901.pdf",
+    "S-P03": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=C0000008",
+    "S-P07": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0030026",
+    "S-P08": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0030029",
+    "S-P12": "https://health.gov.taipei/News_Content.aspx?n=BB5A41BA1E6CA260",
+    "S-P15": "https://www.guinnessworldrecords.com/world-records/most-comments-on-a-facebook-item-in-24-hours",
+    "S-M19": "https://www.chinatimes.com/realtimenews/20261005003883-260407",
+    "S-M20": "https://www.cna.com.tw/news/aipl/202610060103.aspx",
+    "S-N13": "https://www.chinatimes.com/realtimenews/20261005003883-260407",
+    "S-N14": "https://www.cna.com.tw/news/aipl/202610060103.aspx",
+    "S-N15": "https://news.ltn.com.tw/news/politics/breakingnews/5597336",
+    "S-N16": "https://www.ettoday.net/news/20261006/3249706.htm",
+    "S-D01": "https://news.pts.org.tw/article/830098",
+    "S-D02": "https://www.rti.org.tw/news?uid=3&pid=235837"
+  }
 };
