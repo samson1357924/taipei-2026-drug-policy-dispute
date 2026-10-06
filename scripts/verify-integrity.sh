@@ -25,6 +25,8 @@ REQUIRED=(
   "docs/00-綜合分析報告.md"
   "docs/01-減害政策工具箱.md"
   "docs/02-時間軸.md"
+  "docs/03-來源出處與圖表.md"
+  "docs/04-TVBS電視辯論進展.md"
   "sources/SOURCE-REGISTRY.md"
   "sources/primary/D1-D2-一手文獻存檔.md"
   "data/EVIDENCE-MATRIX.md"
@@ -62,8 +64,8 @@ check_pattern "$RPT" "S-E21" "已正確標註採尿檢驗 X 級條目（S-E21）
 check_pattern "$RPT" "占第二級毒品查獲重量" "依托咪酯占比之分母已更正"
 check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
 check_pattern "sources/SOURCE-REGISTRY.md" "S-E29" "X 級錯誤說法登記完整（S-E01–S-E29）"
-check_pattern "data/EVIDENCE-MATRIX.md" "Q7" "待釐清爭議點 Q1–Q7"
-check_pattern "docs/02-時間軸.md" "Q7" "時間軸包含爭議點 Q7"
+check_pattern "data/EVIDENCE-MATRIX.md" "Q8" "待釐清爭議點 Q1–Q8"
+check_pattern "docs/02-時間軸.md" "Q8" "時間軸包含爭議點 Q8"
 check_pattern "index.html" "disclaimerModal" "前端網頁已配置成立初衷與免責聲明組件"
 
 echo "── 4. CSV 與資料格式防呆 ──"
@@ -130,7 +132,26 @@ else
   fail "未找到 python3"
 fi
 
-echo "── 8. git 狀態 ──"
+echo "── 8. 正體中文與文號門禁 ──"
+# 簡繁門禁：主報告若殘留簡體字（监督／约／危机）即 fail
+# 歷史 review 引用排除：本檢查僅針對 docs/00，review/ 目錄不在檢查範圍內
+# （若擴大為全 repo 遞迴檢查，須加 --exclude-dir=review）
+_SIMPLIFIED_HIT=0
+for _pat in "监督" "约" "危机"; do
+  if grep -q "$_pat" docs/00-綜合分析報告.md 2>/dev/null; then
+    fail "主報告殘留簡體字「$_pat」（應為正體中文）"
+    _SIMPLIFIED_HIT=1
+  fi
+done
+[ "$_SIMPLIFIED_HIT" -eq 0 ] && pass "主報告無簡體字殘留（监督／约／危机）"
+# README 文號門禁：舊文號 1131031302 若殘留即 fail（正確為 1131031622）
+if grep -q "1131031302" README.md 2>/dev/null; then
+  fail "README 殘留舊文號 1131031302（應為 1131031622）"
+else
+  pass "README 無舊文號殘留（1131031302）"
+fi
+
+echo "── 9. git 狀態 ──"
 if git rev-parse --git-dir >/dev/null 2>&1; then
   UNCOMMITTED=$(git status --porcelain | wc -l | tr -d ' ')
   if [ "$UNCOMMITTED" -eq 0 ]; then

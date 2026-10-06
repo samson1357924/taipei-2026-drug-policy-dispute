@@ -128,18 +128,7 @@ window.FactCheckData = {
     },
     {
       layer: 4,
-      name: "第 4 層：受監督物質使用場所／安全注射室（SCS / SIF）",
-      enName: "Supervised Consumption Sites / Safe Injection Facilities",
-      color: "#ea580c",
-      statusBadge: "❌ 台灣零法源・未開辦未評估",
-      taiwanReality: "台灣現行法完全無依據。提供場所者構成便利施用毒品罪，施用者當場為現行犯。衛福部與台北市衛生局均明示「在台灣完全不可行」。",
-      intlEvidence: "雪梨 MSIC 營運 21 年 123 萬次注射現場零死亡；溫哥華 Insite 半徑 500 公尺內致命過量降 35%，公共場所散落針具顯著減少（Lancet / CMAJ）。",
-      risksAndLimits: "加拿大公共衛生署（PHAC）指出宏觀省級過量死亡率未檢出統計顯著下降；面臨強烈社區鄰避效應（NIMBY）與聯邦法律訴訟。",
-      disputeRelevance: "藍營指控「安全注射室增加周遭犯罪」已被溫哥華資料推翻（S-E13），但周遭居民對治安與學童安全的擔憂客觀真實存在（S-PTS2）。"
-    },
-    {
-      layer: 3,
-      name: "第 3 層：社區拿破酮救援（THN / OEND）",
+      name: "第 4 層：社區拿破酮救援（THN / OEND）",
       enName: "Take-Home Naloxone / Overdose Education & Naloxone Distribution",
       color: "#d97706",
       statusBadge: "⚠️ 台灣高度受限・未社區化普及",
@@ -147,6 +136,17 @@ window.FactCheckData = {
       intlEvidence: "麻州高度實施社區過量死亡 ARR 0.54（死亡率降低 46%），非醫事人員在場施救成功率達 96–99%，具明確劑量反應關係（BMJ 2013）。",
       risksAndLimits: "半衰期短（30–90 分鐘），面對強效合成鴉片類（如芬太尼）可能出現二次昏迷；誘發急性戒斷症候群（焦慮、嘔吐、肺水腫）。",
       disputeRelevance: "網傳「拿破酮是縱容吸毒的毒品」為荒謬錯誤（S-E25）。其在本質上與 AED、EpiPen 同屬緊急救命物資。"
+    },
+    {
+      layer: 3,
+      name: "第 3 層：受監督物質使用場所／安全注射室（SCS / SIF）",
+      enName: "Supervised Consumption Sites / Safe Injection Facilities",
+      color: "#ea580c",
+      statusBadge: "❌ 台灣零法源・未開辦未評估",
+      taiwanReality: "台灣現行法完全無依據。提供場所者構成便利施用毒品罪，施用者當場為現行犯。衛福部與台北市衛生局均明示「在台灣完全不可行」。",
+      intlEvidence: "雪梨 MSIC 營運 21 年 123 萬次注射現場零死亡；溫哥華 Insite 半徑 500 公尺內致命過量降 35%，公共場所散落針具顯著減少（Lancet / CMAJ）。",
+      risksAndLimits: "加拿大公共衛生署（PHAC）指出宏觀省級過量死亡率未檢出統計顯著下降；面臨強烈社區鄰避效應（NIMBY）與聯邦法律訴訟。",
+      disputeRelevance: "藍營指控「安全注射室增加周遭犯罪」已被溫哥華資料推翻（S-E13），但周遭居民對治安與學童安全的擔憂客觀真實存在（S-PTS1, S-PTS2）。"
     },
     {
       layer: 2,
@@ -539,7 +539,7 @@ window.FactCheckData = {
     }
   ],
 
-  // 待釐清爭議 Q1 ~ Q7 (誠實揭露兩造證據不足與時空空白)
+  // 待釐清爭議 Q1 ~ Q14 (誠實揭露兩造證據不足與時空空白)
   openQuestions: [
     {
       id: "Q1",
@@ -588,7 +588,7 @@ window.FactCheckData = {
       title: "杜承哲連署破 7,357 人時點衝突（10-04 21:30 vs 10-05 16:05）",
       conflict: "R5 內部記 10-04 21:30；但該數字唯一正式新聞來源（S-N05 自由時報）實刊於 10-05 16:05。",
       impact: "10-04 21:30 屬未經證實之衍生時點；本 repo 僅能確認「10-05 16:05 前已達 7,357 人」。",
-      status: "已修正時間軸，以 S-N05 報導時點為準"
+      status: "維持未定案，暫以 S-N05 為唯一可確認時點"
     },
     {
       id: "Q8",
@@ -596,6 +596,48 @@ window.FactCheckData = {
       conflict: "雙方 10/05～10/06 均稱已簽 TVBS 意向書（S-M19、S-M20），但 TVBS 官方稱協商中尚未定論（S-M21）；四家邀約日期僅民視單源；主持／時間／地點查無資料。",
       impact: "僅能確認原則同意，不可誤讀為已排定；詳見 docs/04-TVBS電視辯論進展.md。",
       status: "2026-10-06 新增，待幕僚協商與 TVBS 公告追蹤"
+    },
+    {
+      id: "Q9",
+      title: "美沙冬機構數口徑：123 家 vs 180 家以上",
+      conflict: "S-D02（央廣 RTI 引衛福部 10-05：123 家＋30 給藥點）vs 報告 §4.5（180 家以上，媒體引述）。",
+      impact: "口徑（全國指定機構／是否含給藥點／統計年度）待釐清；兩種表述並列、不刪除現有數字，不取代現有 P1。",
+      status: "維持未定案，待 P1 原文（衛福部最新年度統計）"
+    },
+    {
+      id: "Q10",
+      title: "台北清潔針具「93 萬支」歸屬口徑",
+      conflict: "網傳 93 萬支（年度／全台或北市歸屬、發放量 vs 回收量口徑待釐清，原始統計未取得）。",
+      impact: "歸屬年度與地理口徑不明，不可逕行引用。",
+      status: "維持未定案，待 P1 原文（疾管署統計）"
+    },
+    {
+      id: "Q11",
+      title: "尿檢三軌區分（校園／保護管束＋警察採驗／毒駕）",
+      conflict: "S-P07（校園／特定人員第 11 條）vs S-P08（保護管束者與警察採驗第 14 條）vs 毒駕軌閾值說法（單一來源）。",
+      impact: "三軌適用範圍與檢驗項目結構待 P1 回溯釐清；S-E21（原則不含、例外可增）維持。",
+      status: "維持未定案，待 P1 原文"
+    },
+    {
+      id: "Q12",
+      title: "大麻相關臉書貼文指涉",
+      conflict: "S-D06（蔣反問大麻 Yes or No，P4 攻防）vs 網傳臉書貼文原文（直連待補）。",
+      impact: "是否主張合法化待原文回溯，不可推定。",
+      status: "維持未定案，待 P1 原文"
+    },
+    {
+      id: "Q13",
+      title: "美沙冬「第二級」語用（第二級管制藥品 vs 第二級毒品）",
+      conflict: "S-P03（雙重第二級定性）：醫療處方 vs 非法施用脈絡易混淆。",
+      impact: "法律定性並列使用時須註明脈絡；不改變現有定性。",
+      status: "維持未定案，待 P1 原文"
+    },
+    {
+      id: "Q14",
+      title: "2026 年緝獲／查緝數據與 2025 年通報之銜接",
+      conflict: "S-P10（2025 年通報，P1）vs 2026 年新查緝公布（待第二源，P3）。",
+      impact: "年度銜接與比較基準待釐清，不可逕行跨年比較。",
+      status: "維持未定案，待 P1 原文"
     }
   ],
 
@@ -791,7 +833,7 @@ window.FactCheckData = {
       actor: "Civic Open Source Project",
       category: "公民查核成果",
       badge: "🟢 一手交叉驗證",
-      content: "完成 7 路並行調查與三輪事實抽驗，釐清 29 項虛假謬誤與 8 項待定案爭議，以去極化、拒絕片面過濾的開源平台提供市民客觀判讀。"
+      content: "完成 7 路並行調查與三輪事實抽驗，釐清 29 項虛假謬誤與 14 項待定案爭議，以去極化、拒絕片面過濾的開源平台提供市民客觀判讀。"
     }
   ],
 
@@ -811,6 +853,8 @@ window.FactCheckData = {
     "S-N15": "https://news.ltn.com.tw/news/politics/breakingnews/5597336",
     "S-N16": "https://www.ettoday.net/news/20261006/3249706.htm",
     "S-D01": "https://news.pts.org.tw/article/830098",
-    "S-D02": "https://www.rti.org.tw/news?uid=3&pid=235837"
+    "S-D02": "https://www.rti.org.tw/news?uid=3&pid=235837",
+    "S-PTS1": "https://news.pts.org.tw/article/829848",
+    "S-PTS2": "https://news.pts.org.tw/article/829933"
   }
 };

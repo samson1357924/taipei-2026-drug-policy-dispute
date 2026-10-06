@@ -203,6 +203,9 @@
       <div style="max-width: 480px; margin: 0 auto 2rem;">
         <input type="text" id="timelineSearchInput" class="search-input" placeholder="搜尋時間軸事件、發言者或關鍵字..." aria-label="搜尋時間軸">
       </div>
+      <p class="section-desc" style="text-align:center; margin-bottom:1rem;">
+        前端精選 24 件，完整 45 件見 <a href="data/timeline.csv" target="_blank" rel="noopener noreferrer">timeline.csv</a>／<a href="docs/02-時間軸.md" target="_blank" rel="noopener noreferrer">docs/02</a>。
+      </p>
       <div id="timelineStream" class="timeline-stream">
         <!-- Rendered by JS -->
       </div>
@@ -309,7 +312,7 @@
           <h4>📰 具名媒體＋中立媒體（P3）</h4>
           <ul>
             <li><a href="https://www.cna.com.tw/news/aipl/202610060103.aspx" target="_blank" rel="noopener noreferrer">S-N14 中央社辯論源稿 ↗</a> · <a href="https://news.pts.org.tw/article/830098" target="_blank" rel="noopener noreferrer">S-D01 公視辯論 ↗</a></li>
-            <li><a href="https://news.ltn.com.tw/news/politics/breakingnews/5597336" target="_blank" rel="noopener noreferrer">S-N15 自由雙方已簽 ↗</a> · <a href="https://news.pts.org.tw/article/829933" target="_blank" rel="noopener noreferrer">S-PTS2 公視實拍 ↗</a></li>
+            <li><a href="https://news.ltn.com.tw/news/politics/breakingnews/5597336" target="_blank" rel="noopener noreferrer">S-N15 自由雙方已簽 ↗</a> · <a href="https://news.pts.org.tw/article/829848" target="_blank" rel="noopener noreferrer">S-PTS1 公視平衡報導 ↗</a> · <a href="https://news.pts.org.tw/article/829933" target="_blank" rel="noopener noreferrer">S-PTS2 公視實拍 ↗</a></li>
             <li><a href="https://www.thenewslens.com/article/270421" target="_blank" rel="noopener noreferrer">S-N19 TNL 彙整 ↗</a> · <a href="https://www.ptt.cc/bbs/HatePolitics/M.1791083666.A.607.html" target="_blank" rel="noopener noreferrer">S-C04 PTT 討論串 ↗</a></li>
           </ul>
         </article>
@@ -320,14 +323,14 @@
     <section id="matrix" class="tab-pane" role="tabpanel" aria-labelledby="tab-matrix">
       <div class="section-head">
         <span class="section-badge">Transparency & Open Science</span>
-        <h3 class="section-title">待釐清爭議點（Q1–Q8）與開源證據矩陣</h3>
+        <h3 class="section-title">待釐清爭議點（Q1–Q14）與開源證據矩陣</h3>
         <p class="section-desc">
-          真實的研究承認未知。此處透明揭露原始調查間的 8 項真實衝突與時空空白（含新增 Q8：TVBS 辯論是否獨家定案），拒絕在缺乏證據時強行定案。
+          真實的研究承認未知。此處透明揭露原始調查間的 14 項真實衝突與時空空白（含新增 Q8：TVBS 辯論是否獨家定案，Q9–Q14 候選維持未定案待 P1），拒絕在缺乏證據時強行定案。
         </p>
       </div>
 
       <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-main);">
-        ⚠️ 8 項待釐清爭議點（Open Questions Q1–Q8）
+        ⚠️ 14 項待釐清爭議點（Open Questions Q1–Q14）
       </h4>
       <div id="openQuestionsContainer" class="questions-container">
         <!-- Rendered by JS -->
@@ -383,7 +386,7 @@
       </div>
       <p class="footer-note">
         本專案由公民研究團隊基於客觀查核精神建立，不隸屬於任何政黨、候選人競選辦公室或商業媒體。<br>
-        網站內容遵循 CC BY-SA 4.0 國際授權條款，引用時請標明原始文獻與來源編號。
+        網站內容遵循 CC BY 4.0 國際授權條款，引用時請標明原始文獻與來源編號。
       </p>
       <div style="font-size: 0.8rem; color: var(--text-dim); font-family: var(--font-mono);">
         Commit Verification: 2026-10-06 / Taipei Mayoral Election Dispute Fact-Check Engine
@@ -410,12 +413,13 @@
 
         <h4>二、 核心免責聲明</h4>
         <ol>
-          <li><strong>非黨派與中立宣告</strong>：本平台純屬獨立公民技術實踐，不隸屬於任何政黨、競選團隊、公關公司或政府機構，亦無接受政治資助。本專案不判定政治人物是非，只釐清事實文本。</li>
-          <li><strong>AI 輔助性質與技術侷限</strong>：研究過程採用 AI 輔助檢索與多 Subagents 交叉驗證（並主動發現並修正了自身初期計算偏差，如 S-E20）。AI 與自然語言模型仍具機率本質與侷限，引用時應以文中所附之一手原始公報（P1 級）為準。</li>
+          <li><strong>非黨派與中立宣告</strong>：本平台純屬獨立公民技術實踐，不隸屬於任何政黨、民意代表、競選團隊、公關公司或政府機構，亦無接受政治資助。本專案不判定政治人物是非，只釐清事實文本。</li>
+          <li><strong>AI 輔助性質與技術侷限</strong>：研究過程採用 AI 輔助檢索與多 Subagents 交叉驗證（並主動發現並修正了自身初期計算偏差，例如 S-E20）。AI 與自然語言模型仍具機率本質與侷限，引用時應以文中所附之一手原始公報（P1 級）為準。</li>
           <li><strong>非法律與醫療專業建議</strong>：法規分析純供公共政策研討參考，不構成法律訴訟意見；減害與藥理探討純屬公衛事實查核，絕不構成臨床醫療診斷或戒治處方。戒毒諮詢請洽專線 0800-770-885。</li>
           <li><strong>引用責任與第三方免責</strong>：轉載引用應維持完整脈絡，第三方因不當解讀或政治動員衍生之法律責任概由該第三方自行承擔。</li>
-          <li><strong>全民監督與持續勘誤機制</strong>：恪守「查無資料 ≠ 不存在」原則，歡迎任何人攜帶一手文獻佐證透過 GitHub 提交勘誤。</li>
+          <li><strong>全民監督與持續勘誤機制</strong>：恪守「查無資料 ≠ 不存在」原則，歡迎任何人攜帶一手文獻佐證透過 <a href="https://github.com/samson1357924/taipei-2026-drug-policy-dispute/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a> 提交勘誤，請附 P1/P2 一手文獻佐證。</li>
         </ol>
+        <p>授權歸屬：內容 CC BY 4.0／代碼 MIT，詳見專檔 §三。</p>
 
         <div class="modal-footer-links">
           <a href="docs/DISCLAIMER-AND-MISSION.md" target="_blank" rel="noopener noreferrer" class="repo-link-btn">
