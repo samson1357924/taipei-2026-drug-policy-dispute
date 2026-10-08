@@ -61,13 +61,14 @@
 
 ---
 
-## 📺 最新進展：TVBS 電視辯論（10/05～10/06 原則同意，未定案）
+## 📺 最新進展：TVBS 電視辯論（截至 10/07 檢索：原則同意，未定案）
 
-> 詳見 [docs/04-TVBS電視辯論進展.md](docs/04-TVBS電視辯論進展.md)（2 路 subagents 並行調查＋交叉驗證）
+> 詳見 [docs/04-TVBS電視辯論進展.md](docs/04-TVBS電視辯論進展.md)（2 路 subagents 並行調查＋交叉驗證）與 [sources/INTAKE-20261007.md](sources/INTAKE-20261007.md)（10/07 追蹤檢索紀錄，不作結案）
 
 - **已證實**：蔣辦發言人[陳柏翰 10/05 定調 TVBS](https://www.chinatimes.com/realtimenews/20261005003883-260407)（S-M19）；沈辦發言人[蔡一愷稱已簽三立、民視、鏡、TVBS](https://www.cna.com.tw/news/aipl/202610060103.aspx)（S-M20）；雙方 10/06 皆稱願辯（含毒品議題）— [中央社源稿](https://www.cna.com.tw/news/aipl/202610060103.aspx)（S-N14）、[公視 PNN](https://news.pts.org.tw/article/830098)（S-D01）
-- **未定案**：[TVBS 官方稱協商中尚未定論](https://www.taiwannews.com.tw/zh/news/6452552)（S-M21）；時間、地點、主持人、形式、場次、是否獨家、其餘候選人安排**查無資料**（**Q8**）
+- **未定案**：[TVBS 官方稱協商中尚未定論](https://www.taiwannews.com.tw/zh/news/6452552)（S-M21）；時間、地點、主持人、形式、場次、是否獨家、其餘候選人安排**檢索範圍內查無資料**（**Q8 維持未定案，截至 10/07 檢索無新定案資訊**）
 - **邀約時序**：[民視稱 8/29 首邀](https://www.ftvnews.com.tw/news/detail/2026A06P07M1)（S-N18，日期待第二源驗證）；沈稱順序民視→三立→鏡→TVBS（[ETtoday](https://www.ettoday.net/news/20261006/3249706.htm) S-N16）
+- **10/07 追蹤**：10/06晚間～10/07檢索範圍內（範圍+關鍵字見intake §二/§三）未見新機率民調（最近仍為 9/22 信民）；大麻攻防掛回 Q12（FB 原文直連待補，維持未定案）；量級維持 Q7，詳見 intake。
 
 ---
 

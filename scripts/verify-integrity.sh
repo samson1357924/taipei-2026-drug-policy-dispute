@@ -64,7 +64,7 @@ check_pattern "$RPT" "S-E21" "已正確標註採尿檢驗 X 級條目（S-E21）
 check_pattern "$RPT" "占第二級毒品查獲重量" "依托咪酯占比之分母已更正"
 check_pattern "$RPT" "377,004" "金氏紀錄正確基準（377,004）"
 check_pattern "sources/SOURCE-REGISTRY.md" "S-E29" "X 級錯誤說法登記完整（S-E01–S-E29）"
-check_pattern "data/EVIDENCE-MATRIX.md" "Q8" "待釐清爭議點 Q1–Q8"
+check_pattern "data/EVIDENCE-MATRIX.md" "Q14" "待釐清爭議點 Q1–Q14"
 check_pattern "docs/02-時間軸.md" "Q8" "時間軸包含爭議點 Q8"
 check_pattern "index.html" "disclaimerModal" "前端網頁已配置成立初衷與免責聲明組件"
 
